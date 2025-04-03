@@ -68,7 +68,9 @@ function changeModel() {
 }
 
 // have function run automatically whenever the pseudo-button is clicked
-modelButton.addEventListener("click", changeModel);
+if (modelButton) {
+    modelButton.addEventListener("click", changeModel);
+}
 
 /****************** duration button logic ******************/
 /*  - first, create a variable to represent the "Change Duration" pseudo-button.
@@ -98,4 +100,6 @@ function changeDuration() {
     recalculate();
 }
 
-durationButton.addEventListener("click", changeDuration);
+if (durationButton) {
+    durationButton.addEventListener("click", changeDuration);
+}
