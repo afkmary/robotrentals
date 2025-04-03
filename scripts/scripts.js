@@ -6,16 +6,11 @@ You are encouraged to use the provided naming convention for ease of review.
 
 */
 
-/*** fixes the error Uncaught TypeError: modelButton is null that occurs because the 
-document.getElementById("model-button") call is unable to find an element with the ID 
-model-button in the DOM at the time the script is executed caused in the html file ***/
-document.addEventListener("DOMContentLoaded", function () {
-
 /****************** create variables ******************/
 /* create variables to hold the values for modelName and duration */
 
-    let modelName = "XYZ";
-    let duration = 0;
+let modelName = "XYZ";
+let duration = 0;
 
 /****************** helper function ******************/
 /* create a function called recalculate() which will
@@ -27,21 +22,21 @@ document.addEventListener("DOMContentLoaded", function () {
     - set the value of the calculated-cost element's innerHTML to this new value
 */
 
-    function recalculate() {
-        let costLabel = document.getElementById("calculated-cost");
-        let totalCost = 0;
+function recalculate() {
+    let costLabel = document.getElementById("calculated-cost");
+    let totalCost = 0;
 
-        // Calculate the total cost based on the modelName
-        if (modelName === "XYZ") {
-            totalCost = duration * 100;
-        } 
-        else if (modelName === "CPRG") {
-            totalCost = duration * 213;
-        }
-
-        // Update the calculated-cost element's innerHTML
-        costLabel.innerHTML = totalCost;
+    // Calculate the total cost based on the modelName
+    if (modelName === "XYZ") {
+        totalCost = duration * 100;
+    } 
+    else if (modelName === "CPRG") {
+        totalCost = duration * 213;
     }
+
+    // Update the calculated-cost element's innerHTML
+    costLabel.innerHTML = totalCost;
+}
 
 /****************** model button logic ******************/
 
@@ -55,26 +50,25 @@ document.addEventListener("DOMContentLoaded", function () {
 - finally, uncomment the following line of JavaScript to have this function run automatically whenever the pseudo-button is clicked: */
     // modelButton.addEventListener("click", changeModel);
 
-    let modelButton = document.getElementById("model-button");
+let modelButton = document.getElementById("model-button");
 
-    function changeModel() {
-        let modelText = document.getElementById("model-text");
+function changeModel() {
+    let modelText = document.getElementById("model-text");
 
-        // Toggle the modelName and update the model-text element
-        if (modelName === "XYZ") {
-            modelName = "CPRG";
-            modelText.innerHTML = "Model CPRG";
-        } else if (modelName === "CPRG") {
-            modelName = "XYZ";
-            modelText.innerHTML = "Model XYZ";
-        }
-
-        recalculate();
+    // Toggle the modelName and update the model-text element
+    if (modelName === "XYZ") {
+        modelName = "CPRG";
+        modelText.innerHTML = "Model CPRG";
+    } else if (modelName === "CPRG") {
+        modelName = "XYZ";
+        modelText.innerHTML = "Model XYZ";
     }
 
+    recalculate();
+}
 
-    // have function run automatically whenever the pseudo-button is clicked
-    modelButton.addEventListener("click", changeModel);
+// have function run automatically whenever the pseudo-button is clicked
+modelButton.addEventListener("click", changeModel);
 
 /****************** duration button logic ******************/
 /*  - first, create a variable to represent the "Change Duration" pseudo-button.
@@ -87,21 +81,21 @@ document.addEventListener("DOMContentLoaded", function () {
     - finally, attach this function to the "Change Duration" pseudo-button, so it runs whenever the button is clicked.
 */
 
-    let durationButton = document.getElementById("duration-button");
+let durationButton = document.getElementById("duration-button");
 
-    function changeDuration() {
-        let durationText = document.getElementById("duration-text");
+function changeDuration() {
+    let durationText = document.getElementById("duration-text");
 
-        // Prompt the user for a new duration
-        let newDuration = prompt("Enter New Duration: ");
+    // Prompt the user for a new duration
+    let newDuration = prompt("Enter New Duration: ");
 
-        // Convert the input to an integer and update the duration
-        duration = parseInt(newDuration);
+    // Convert the input to an integer and update the duration
+    duration = parseInt(newDuration);
 
-        // Update the duration-text element and recalculate
-        durationText.innerHTML = duration;
-        recalculate();
-    }
+    // Update the duration-text element and recalculate
+    durationText.innerHTML = duration;
 
-    durationButton.addEventListener("click", changeDuration);
-});
+    recalculate();
+}
+
+durationButton.addEventListener("click", changeDuration);
