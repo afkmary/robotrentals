@@ -90,12 +90,11 @@ function changeDuration() {
     // Prompt the user for a new duration
     let newDuration = prompt("Enter New Duration: ");
 
-    // Check if the user entered something
-    if (newDuration) {
-        duration = parseInt(newDuration);
-        durationText.innerHTML = duration;
-        recalculate();
-    }
+    duration = newDuration;
+
+    durationText.innerHTML = parseInt(duration, 10);   
+
+    recalculate();
 }
 
 durationButton.addEventListener("click", changeDuration);
