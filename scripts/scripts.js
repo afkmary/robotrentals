@@ -49,15 +49,12 @@ document.addEventListener("DOMContentLoaded", function () {
         // Prompt the user for a new duration
         let newDuration = prompt("Enter New Duration: ");
 
-        // Validate and update the duration
+        // Convert the input to an integer and update the duration
         duration = parseInt(newDuration, 10);
 
-        if (!isNaN(duration)) {
-            durationText.innerHTML = duration;
-            recalculate();
-        } else {
-            alert("Please enter a valid number.");
-        }
+        // Update the duration-text element and recalculate
+        durationText.innerHTML = duration;
+        recalculate();
     }
 
     durationButton.addEventListener("click", changeDuration);
