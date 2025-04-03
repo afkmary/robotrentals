@@ -26,15 +26,13 @@ function recalculate() {
     let costLabel = document.getElementById("calculated-cost");
     let totalCost = 0;
 
-    // Calculate the total cost based on the modelName
     if (modelName === "XYZ") {
         totalCost = duration * 100;
-    } 
+    }
     else if (modelName === "CPRG") {
         totalCost = duration * 213;
     }
 
-    // Update the calculated-cost element's innerHTML
     costLabel.innerHTML = totalCost;
 }
 
@@ -55,22 +53,19 @@ let modelButton = document.getElementById("model-button");
 function changeModel() {
     let modelText = document.getElementById("model-text");
 
-    // Toggle the modelName and update the model-text element
     if (modelName === "XYZ") {
         modelName = "CPRG";
         modelText.innerHTML = "Model CPRG";
-    } else if (modelName === "CPRG") {
+    }
+    else if (modelName === "CPRG") {
         modelName = "XYZ";
-        modelText.innerHTML = "Model XYZ";
+        modelText.innerHTML = "Model XYZ"
     }
 
     recalculate();
 }
 
-// have function run automatically whenever the pseudo-button is clicked
-if (modelButton) {
-    modelButton.addEventListener("click", changeModel);
-}
+modelButton.addEventListener("click", changeModel);
 
 /****************** duration button logic ******************/
 /*  - first, create a variable to represent the "Change Duration" pseudo-button.
@@ -87,23 +82,14 @@ let durationButton = document.getElementById("duration-button");
 
 function changeDuration() {
     let durationText = document.getElementById("duration-text");
-
-    // Prompt the user for a new duration
     let newDuration = prompt("Enter New Duration: ");
 
-    // If the prompt returns a value (even an empty string), update the duration
-    if (newDuration !== null) {
-        duration = newDuration;
+    duration = newDuration;
 
-        // Update the duration-text span element to the new value
-        durationText.innerHTML = duration;
+    durationText.innerHTML = parseInt(duration, 10);   
 
-        // Recalculate the total cost
-        recalculate();
-    }
+    recalculate();
 }
 
-// Attach the function to the "Change Duration" pseudo-button
-if (durationButton) {
-    durationButton.addEventListener("click", changeDuration);
-}
+durationButton.addEventListener("click", changeDuration);
+
