@@ -89,8 +89,8 @@ function changeDuration() {
     // Prompt the user for a new duration
     let newDuration = prompt("Enter New Duration: ");
 
-    // Convert the input to an integer and update the duration
-    duration = parseInt(newDuration);
+    // Save the result of the prompt to the duration variable
+    duration = newDuration;
 
     // Update the duration-text element and recalculate
     durationText.innerHTML = duration;
