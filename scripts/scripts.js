@@ -10,7 +10,7 @@ You are encouraged to use the provided naming convention for ease of review.
 /* create variables to hold the values for modelName and duration */
 
 let modelName = "XYZ";
-let duration = 0;     
+let duration = 0;
 
 /****************** helper function ******************/
 /* create a function called recalculate() which will
@@ -64,6 +64,11 @@ function changeModel() {
     recalculate();
 }
 
+// Attach function to the "Switch Model" button
+let modelButton = document.getElementById("model-button");
+modelButton.addEventListener("click", changeModel);
+
+
 /****************** duration button logic ******************/
 /*  - first, create a variable to represent the "Change Duration" pseudo-button.
     - then, create a function called changeDuration() that will
@@ -77,26 +82,18 @@ function changeModel() {
 
 function changeDuration() {
     let durationText = document.getElementById("duration-text");
-    let newDuration = prompt("Enter a new duratio: ");
+    let newDuration = prompt("Enter a new duration (in days):");
 
-    if (newDuration != null) {
-        
-        // Save the new duration and update the display
-        duration = parseInt(newDuration);
-        durationText.innerHTML = duration;
+    // Save the new duration and update the display
+    duration = parseInt(newDuration);
+    durationText.innerHTML = duration;
 
-        // Recalculate the cost after updating the duration
-        recalculate();
+    // Recalculate the cost after updating the duration
+    recalculate();
 }
 
-// Wait for the DOM content to load before attaching event listeners
-document.addEventListener("DOMContentLoaded", function() {
-    
-    // Attach function to the "Switch Model" button
-    let modelButton = document.getElementById("model-button");
-    modelButton.addEventListener("click", changeModel);
+// Attach function to the "Change Duration" button
+let durationButton = document.getElementById("duration-button");
+durationButton.addEventListener("click", changeDuration);
 
-    // Attach function to the "Change Duration" button
-    let durationButton = document.getElementById("duration-button");
-    durationButton.addEventListener("click", changeDuration);
-});  
+
