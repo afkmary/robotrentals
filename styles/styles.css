@@ -31,13 +31,12 @@ h1 {
 
 h2 {
     font-size: 24px;
-    margin-bottom: 12px;
+    
 }
 
 p {
     font-size: 16px;
 }
-
 
 p, li {
     line-height: 32px;
@@ -57,6 +56,10 @@ footer p {
 /* layout */
 main {
     padding: 24px;
+}
+
+h2 {
+    margin-bottom: 12px;
 }
 
 ul {
