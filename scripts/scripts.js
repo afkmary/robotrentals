@@ -91,15 +91,19 @@ function changeDuration() {
     // Prompt the user for a new duration
     let newDuration = prompt("Enter New Duration: ");
 
-    // Save the result of the prompt to the duration variable
-    duration = newDuration;
+    // If the prompt returns a value (even an empty string), update the duration
+    if (newDuration !== null) {
+        duration = newDuration;
 
-    // Update the duration-text element and recalculate
-    durationText.innerHTML = duration;
+        // Update the duration-text span element to the new value
+        durationText.innerHTML = duration;
 
-    recalculate();
+        // Recalculate the total cost
+        recalculate();
+    }
 }
 
+// Attach the function to the "Change Duration" pseudo-button
 if (durationButton) {
     durationButton.addEventListener("click", changeDuration);
 }
