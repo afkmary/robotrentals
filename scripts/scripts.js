@@ -90,10 +90,11 @@ function changeDuration() {
     // Prompt the user for a new duration
     let newDuration = prompt("Enter New Duration: ");
 
-    duration = newDuration;
+    duration = parseInt(newDuration, 10);
 
-    durationText.innerHTML = parseInt(duration, 10);   
+    durationText.innerHTML = duration;
 
+    // Recalculate the total cost
     recalculate();
 }
 
