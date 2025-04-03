@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let newDuration = prompt("Enter New Duration: ");
 
         // Convert the input to an integer and update the duration
-        duration = parseInt(newDuration, 10);
+        duration = parseInt(newDuration);
 
         // Update the duration-text element and recalculate
         durationText.innerHTML = duration;
