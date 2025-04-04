@@ -81,14 +81,20 @@ document.addEventListener('DOMContentLoaded', function() {
 */
 
 // Change Duration Button - Prompts user to enter a new duration
-let durationButton = document.getElementById("duration-button");
-durationButton.addEventListener("click", function() {
+let changeDurationButton = document.getElementById("change-duration-button");
 
-    let userInput = prompt("Enter new duration: ", duration);
-    duration = parseInt(userInput);
-    
-    document.getElementById("duration-text").innerHTML = duration;
+function changeDuration() {
+    let durationText = document.getElementById("duration-text");
+
+    let newDuration = prompt("Enter new duration: ");
+
+    if (newDuration) {
+        durationText.innerHTML = newDuration;
+    }
+
     recalculate();
-});
+}
 
+// Attach the event listener to the button
+changeDurationButton.addEventListener("click", changeDuration);
 
