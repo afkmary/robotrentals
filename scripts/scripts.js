@@ -1,12 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("DOM fully loaded and parsed");
-    
-    let modelButton = document.getElementById("model-button");
-    console.log("modelButton:", modelButton);
-
-    let durationButton = document.getElementById("duration-button");
-    console.log("durationButton:", durationButton);
-    
     /****************** YOUR NAME: Mary Garcia ******************/
 
     /****************** create variables ******************/
@@ -44,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
         - if modelName is currently "XYZ", change the value of modelName to "CPRG", and change the innerHTML of the model-text span element to "Model CPRG"
         - if modelName is currently "CPRG", change the value of modelName to "XYZ", and change the innerHTML of the model-text span element to "Model XYZ"
         - then, recalculate() the total cost.
-    - finally, uncomment the following line of JavaScript to have this function run automatically whenever the pseudo-button is clicked: */
+    */
     let modelButton = document.getElementById("model-button");
 
     function changeModel() {
@@ -55,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
             modelText.innerHTML = "Model CPRG";
         } else if (modelName === "CPRG") {
             modelName = "XYZ";
-            modelText.innerHTML = "Model XYZ"
+            modelText.innerHTML = "Model XYZ";
         }
 
         recalculate();
@@ -71,7 +63,6 @@ document.addEventListener("DOMContentLoaded", function() {
             - save the result of the prompt() to the duration variable
             - change the innerHTML of the duration-text span element to this new value
             - recalculate() the total cost/
-        - finally, attach this function to the "Change Duration" pseudo-button, so it runs whenever the button is clicked.
     */
     let durationButton = document.getElementById("duration-button");
 
@@ -81,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         duration = newDuration;
 
-        durationText.innerHTML = parseInt(duration, 10);   
+        durationText.innerHTML = parseInt(duration, 10);
 
         recalculate();
     }
