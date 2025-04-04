@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         recalculate();
-        isPrompted = true; // Mark as prompted to prevent subsequent triggers
+        isPrompted = false; // Mark as prompted to prevent subsequent triggers
     }
 
     // Attach event listener to duration button
