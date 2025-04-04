@@ -5,11 +5,13 @@ The instructions describe the missing logic that is needed; you will translate t
 You are encouraged to use the provided naming convention for ease of review.
 
 */
+
 // this is to prevent the script from running twice because the HTML code includes it twice.
 if (!window.hasRunRobotScript) {
     window.hasRunRobotScript = true;
 
     document.addEventListener('DOMContentLoaded', function () {
+        
 /****************** create variables ******************/
 /* create variables to hold the values for modelName and duration */
         
