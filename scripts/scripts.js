@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOM fully loaded and parsed");
     // Create variables to hold the values for modelName and duration
     let modelName = "XYZ";
     let duration = 0;
@@ -38,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Duration button logic
     let durationButton = document.getElementById("duration-button");
+    console.log(durationButton);
 
     let isPrompted = false;
 
