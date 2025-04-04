@@ -89,6 +89,6 @@ durationButton.addEventListener("click", function() {
     
     document.getElementById("duration-text").innerHTML = duration;
     recalculate();
-}
+});
 
 
