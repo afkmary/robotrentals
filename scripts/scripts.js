@@ -64,9 +64,10 @@ function changeModel() {
 }
 
 // Switch Model Button - Calls changeModel() when clicked
-let modelButton = document.getElementById("model-button");
-modelButton.addEventListener("click", changeModel);
-
+window.onload = function() {
+    let modelButton = document.getElementById("model-button");
+    modelButton.addEventListener("click", changeModel);
+};
 
 /****************** duration button logic ******************/
 /*  - first, create a variable to represent the "Change Duration" pseudo-button.
