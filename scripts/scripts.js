@@ -37,20 +37,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Duration button logic
-    let durationButton = document.getElementById("duration-button");
+  let isPrompted = false;
 
     function changeDuration() {
-        let durationText = document.getElementById("duration-text");
-        let newDuration = prompt("Enter new duration: ");
-        
-        if (newDuration) {
-            duration = parseInt(newDuration); // Ensure it's a number
-            durationText.innerHTML = duration;
-        }
+    if (isPrompted) return; // Prevent multiple prompts
 
-        recalculate();
+    let durationText = document.getElementById("duration-text");
+    let newDuration = prompt("Enter new duration: ");
+    
+    if (newDuration) {
+        duration = parseInt(newDuration); // Ensure it's a number
+        durationText.innerHTML = duration;
     }
 
+    recalculate();
+    isPrompted = true; // Mark as prompted to prevent subsequent triggers
+}
     // Attach event listener to duration button
     if (durationButton) {
         durationButton.addEventListener("click", changeDuration);
