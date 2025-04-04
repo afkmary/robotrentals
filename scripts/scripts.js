@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
+    console.log("DOM fully loaded and parsed");
+    
+    let modelButton = document.getElementById("model-button");
+    console.log("modelButton:", modelButton);
+
+    let durationButton = document.getElementById("duration-button");
+    console.log("durationButton:", durationButton);
+    
     /****************** YOUR NAME: Mary Garcia ******************/
 
     /****************** create variables ******************/
