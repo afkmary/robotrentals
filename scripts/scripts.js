@@ -88,7 +88,7 @@ function changeDuration() {
     let durationText = document.getElementById("duration-text");
 
     // Prompt the user for a new duration
-    let newDuration = prompt("Enter New Duration: ");
+    newDuration = prompt("Enter New Duration: ");
 
     // Check if the user entered something
     if (newDuration) {
