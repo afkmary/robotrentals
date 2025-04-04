@@ -39,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Duration button logic
     let durationButton = document.getElementById("duration-button");
-    console.log(durationButton);
 
     let isPrompted = false;
 
