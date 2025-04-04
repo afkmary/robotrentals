@@ -27,10 +27,10 @@ function recalculate() {
 
     let totalCost;
     if (modelName === "XYZ") {
-        cost = duration * 100;
+        totalCost = duration * 100;
     } 
     else if (modelName === "CPRG") {
-        cost = duration * 213;
+        totalCost = duration * 213;
     }
 
     costLabel.innerHTML = totalCost;
