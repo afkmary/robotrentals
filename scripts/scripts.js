@@ -48,6 +48,7 @@ function recalculate() {
 - finally, uncomment the following line of JavaScript to have this function run automatically whenever the pseudo-button is clicked: */
     // modelButton.addEventListener("click", changeModel);
 
+let modelButton = document.getElementById("model-button");
 function changeModel() {
     let modelText = document.getElementById("model-text");
     
@@ -64,7 +65,6 @@ function changeModel() {
 }
 
 // Switch Model Button - Calls changeModel() when clicked
-let modelButton = document.getElementById("model-button");
 if (modelButton) {
     modelButton.addEventListener("click", changeModel);
 }
@@ -81,7 +81,7 @@ if (modelButton) {
 */
 
 // Change Duration Button - Prompts user to enter a new duration
-let changeDurationButton = document.getElementById("change-duration-button");
+let durationButton = document.getElementById("duration-button");
 
 function changeDuration() {
     let durationText = document.getElementById("duration-text");
@@ -96,6 +96,8 @@ function changeDuration() {
 }
 
 // Attach the event listener to the button
-changeDurationButton.addEventListener("click", changeDuration);
+if (durationButton) {
+    durationButton.addEventListener("click", changeDuration);
+}
 
 
